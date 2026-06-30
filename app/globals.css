@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --sky-top: #8fd9f3;
+  --sky-bot: #cdeefb;
+  --cream: #fff8ec;
+  --white: #ffffff;
+  --ink: #2d2150;
+  --ink-soft: #5b5180;
+  --ink-faint: #8a82ab;
+  --teal: #2bc7ce;
+  --teal-dark: #1a9aa1;
+  --purple: #9b6bd9;
+  --purple-dark: #7148b0;
+  --pink: #ff6fa8;
+  --pink-dark: #e0467f;
+  --gold: #ffc94d;
+  --gold-dark: #e8a623;
+  --orange: #ff8a3d;
+  --orange-dark: #e8691b;
+  --green: #6fd957;
+  --green-dark: #48b830;
+}
+
+body {
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bot) 45%, #e8f8ec 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Mascot animations ── */
+@keyframes mascotBob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-9px) rotate(-2deg); }
+}
+.mascot-bob { animation: mascotBob 2.6s ease-in-out infinite; }
+
+@keyframes blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+.mascot-eye { animation: blink 4.2s ease-in-out infinite; transform-origin: center; }
+.mascot-eye2 { animation: blink 4.2s ease-in-out infinite 0.08s; transform-origin: center; }
+
+@keyframes tailWag {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(14deg); }
+}
+.mascot-tail { transform-origin: 80% 75%; animation: tailWag 1.4s ease-in-out infinite; }
+
+@keyframes earWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(6deg); }
+}
+.mascot-ear { transform-origin: bottom center; animation: earWiggle 3s ease-in-out infinite; }
+
+/* ── Cloud drift ── */
+@keyframes driftCloud {
+  from { transform: translateX(0); }
+  to { transform: translateX(130vw); }
+}
+.cloud-drift { animation: driftCloud 80s linear infinite; }
+
+/* ── Sparkles rising ── */
+@keyframes sparkUp {
+  0% { transform: translateY(0) scale(0.6); opacity: 0; }
+  10% { opacity: 0.9; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(-90vh) scale(1.1); opacity: 0; }
+}
+.spark-up { animation: sparkUp linear infinite; }
